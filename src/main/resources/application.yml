@@ -1,9 +1,18 @@
+# Project configuration
+server:
+  port: 2022
+  error:
+    include-message: always
+    include-binding-errors: always
+# Spring Boot configuration
 spring:
+  # Database
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:evcsm_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    username:
+    url: jdbc:h2:file:./data/kotlin-spring-db
+    username: sa
     password:
+  # JPA properties
   jpa:
     hibernate:
       ddl-auto: create-drop
