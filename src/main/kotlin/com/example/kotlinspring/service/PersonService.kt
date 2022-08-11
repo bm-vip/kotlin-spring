@@ -10,6 +10,10 @@ class PersonService(var repository: PersonRepository) {
         return repository.findAll()
     }
 
+    fun findById(id: Long): PersonEntity? {
+        return repository.findById(id).orElse(null)
+    }
+
     fun save(person: PersonEntity):PersonEntity {
         return repository.save(person)
     }

@@ -1,11 +1,7 @@
 package com.example.kotlinspring.entity
 
-import java.util.*
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
-data class PersonEntity(@Id @GeneratedValue val id: UUID?, val name:String) {
-
+data class PersonEntity(@Id @SequenceGenerator(name="seq_person") @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_person") val id: Long?, val name:String) {
 }
